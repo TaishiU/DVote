@@ -37,7 +37,7 @@ contract DVote {
         uint vote;   // 投票された候補者のインデックス
     }
 
-    //可能なアドレスごとに `Voter`構造体を格納する状態変数を宣言します。
+    //可能なアドレスごとに `Voter`構造体を格納する状態変数を宣言する
     mapping(address => Voter) public voters;
 
 
@@ -84,7 +84,7 @@ contract DVote {
         voters[voter].weight = 1; //「投票済み」に変更
     }
 
-    /// 投票を代理人 `to`に委任します。
+    /// 投票を代理人 `to`に委任する
     function delegate(address to) public {
         // 参照を割り当てます
         Voter storage sender = voters[msg.sender]; //senderは投票権を代理人に送る人。storageなので、ブロックチェーンに情報が書き込まれる
